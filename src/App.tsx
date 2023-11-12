@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SearchBar from './components/SearchBar/SearchBar';
+import PokemonSprite from './components/PokemonSprite/PokemonSprite';
+import PokemonType from './components/PokemonType/PokemonType';
+import PokemonStats from './components/PokemonInfo/PokemonInfo';
+import { BaseStats } from './helpers/class/BaseStats';
+import { BasicInfo } from './helpers/class/BasicInfo';
+import { PokemonAbility } from './helpers/class/PokemonAbility';
 
 function App() {
+  const types: string[] = ['steel', 'dark'];
+  const baseStats = new BaseStats(15, 12, 11, 1, 1, 1);
+  const basicInfo = new BasicInfo(1, 1);
+  const pokemonAbilities: PokemonAbility[] = [
+    new PokemonAbility("run-away", "This Pokémon is always successful fleeing from wild battles, even if trapped by a move or ability."),
+    new PokemonAbility("quick-feet", "Whenever this Pokémon has a major status ailment, it has 1.5× its Speed.  This Pokémon is not affected by the usual Speed cut from paralysis.\n\nOverworld: If the lead Pokémon has this ability, the wild encounter rate is halved."),
+    new PokemonAbility("rattled", "This Pokémon's Speed rises one stage with each hit from a damaging dark-, ghost-, or bug-type move.")
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-Container">
+        <SearchBar></SearchBar>
+        <PokemonSprite></PokemonSprite>
+        <PokemonType types={types} />
+        <PokemonStats baseStats={baseStats} basicInfo={basicInfo} pokemonAbilities={pokemonAbilities}></PokemonStats>
+      </div>
     </div>
   );
 }
