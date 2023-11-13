@@ -1,9 +1,16 @@
-import './PokemonSprite.css'
+import { Skeleton } from "@mui/material";
+import { usePokemonContext } from "../../lib/contexts/PokemonContext";
+import "./PokemonSprite.css";
 
 export default function PokemonSprite() {
-    return (
-        <div className='pokemon-sprite'>
-                <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png' alt='Venusaur'></img>
-        </div>
-    );
-  }
+  const { pokemon, isLoadingPokemon } = usePokemonContext();
+
+  return isLoadingPokemon ? <Skeleton /> : (
+      <div className="pokemon-sprite">
+        <img
+          src={pokemon?.sprites?.front_default}
+          alt={pokemon?.name}
+        ></img>
+      </div>
+  );
+}

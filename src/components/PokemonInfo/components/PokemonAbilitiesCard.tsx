@@ -6,7 +6,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { PokemonAbility } from '../../helpers/class/PokemonAbility';
+import { PokemonAbility } from '../../../helpers/class/PokemonAbility';
 
 interface PokemonAbilities {
   pokemonAbilities: PokemonAbility[];

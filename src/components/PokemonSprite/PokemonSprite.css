@@ -9,3 +9,7 @@
     border-radius: 50%;
     margin: 20px 0px 10px;
 }
+
+.pokemon-sprite::first-letter {
+    text-transform: uppercase;
+}

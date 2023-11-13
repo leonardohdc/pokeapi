@@ -1,7 +1,7 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { BasicInfo } from '../../helpers/class/BasicInfo';
+import { BasicInfo } from '../../../helpers/class/BasicInfo';
 
 interface PokemonStats {
     basicInfo: BasicInfo;

@@ -5,16 +5,14 @@ interface Type {
   backgroundColor: string;
 }
 
-export const TypeBox: React.FC<Type> = (props) => {
-
-  const StyledComponent = styled.div`
+const StyledComponent = styled.div<{ $bgColor?: string }>`
   height: 50px;
   position: relative;
   width: 309px;
   margin-bottom: 40px;
 
   & .overlap-group {
-    background-color: ${Type => props.backgroundColor};
+    background-color: ${(props) => (props.$bgColor)};
     border-radius: 5px;
     height: 50px;
     left: 0;
@@ -35,13 +33,15 @@ export const TypeBox: React.FC<Type> = (props) => {
     font-weight: 500;
     color: #212121;
     top: 17px;
-  }`;
+  }
+`;
 
+export const TypeBox: React.FC<Type> = (props) => {
   return (
-      <StyledComponent>
-          <div className="overlap-group">
-              <div className="text-wrapper">{props.text}</div>
-          </div>
-      </StyledComponent>
+    <StyledComponent $bgColor={props.backgroundColor}>
+      <div className="overlap-group">
+        <div className="text-wrapper">{props.text}</div>
+      </div>
+    </StyledComponent>
   );
 };

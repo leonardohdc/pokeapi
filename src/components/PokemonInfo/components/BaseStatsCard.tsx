@@ -1,7 +1,7 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { BaseStats } from '../../helpers/class/BaseStats';
+import { BaseStats } from '../../../helpers/class/BaseStats';
 
 interface PokemonStats {
     baseStats: BaseStats;

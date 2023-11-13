@@ -1,11 +1,11 @@
 import React from 'react';
-import './PokemonInfo.css'
-import { BaseStats } from '../../helpers/class/BaseStats';
 import { PokemonAbility } from '../../helpers/class/PokemonAbility'; 
 import { BasicInfo } from '../../helpers/class/BasicInfo';
-import PokemonAbilitiesCard from './PokemonAbilitiesCard';
-import BaseStatsCard from './BaseStatsCard';
-import BasicInfoCard from './BasicInfoCard';
+import PokemonAbilitiesCard from './components/PokemonAbilitiesCard';
+import BaseStatsCard from './components/BaseStatsCard';
+import BasicInfoCard from './components/BasicInfoCard';
+import { PokemonInfoContainer } from './PokemonInfo.styles';
+import { BaseStats } from '../../helpers/class/BaseStats';
 
 interface PokemonStats {
   baseStats: BaseStats;
@@ -13,13 +13,13 @@ interface PokemonStats {
   pokemonAbilities: PokemonAbility[];
 }
 
-const PokemonStats: React.FC<PokemonStats> = (props) => {
+const PokemonStats: React.FC<PokemonStats> = ({ baseStats, basicInfo, pokemonAbilities }) => {
     return (
-      <div className='pokemon-info-box'>
-          <BaseStatsCard baseStats={props.baseStats}></BaseStatsCard>
-          <BasicInfoCard basicInfo={props.basicInfo}></BasicInfoCard>
-          <PokemonAbilitiesCard pokemonAbilities={props.pokemonAbilities}></PokemonAbilitiesCard>
-      </div>
+      <PokemonInfoContainer>
+        <BaseStatsCard baseStats={baseStats}></BaseStatsCard>
+          <BasicInfoCard basicInfo={basicInfo}></BasicInfoCard>
+          <PokemonAbilitiesCard pokemonAbilities={pokemonAbilities}></PokemonAbilitiesCard>
+      </PokemonInfoContainer>
     );
 };
 
