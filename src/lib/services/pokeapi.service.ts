@@ -21,22 +21,6 @@ const useGetAllPokemons = () => {
   return result;
 };
 
-const useGetAbility = (name: string) => {
-  const abilityName = name ? name : "overgrow";
-
-  const result = useQuery({
-    queryKey: ["getAbility", abilityName],
-    queryFn: async () => {
-      const { data } = await axios.get(
-        `https://pokeapi.co/api/v2/ability/${abilityName}`
-      );
-      return data;
-    },
-  });
-
-  return result;
-};
-
 const useGetPokemon = (name: string) => {
   const pokemonName = name ? name : "bulbasaur";
 
@@ -56,5 +40,4 @@ const useGetPokemon = (name: string) => {
 export const pokeapiService = {
   useGetAllPokemons,
   useGetPokemon,
-  useGetAbility,
 };

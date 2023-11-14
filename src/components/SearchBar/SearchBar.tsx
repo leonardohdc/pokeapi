@@ -1,4 +1,3 @@
-import React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { pokeapiService } from "../../lib/services/pokeapi.service";
@@ -25,12 +24,14 @@ export default function SearchBar() {
       getOptionLabel={(option: Pokemon) => capitalizeFirstLetter(option.name)}
       onChange={(_, value, reason) => {
         if (reason === "selectOption") {
-          setCurrentPokemon(value?.name ?? '');
+          setCurrentPokemon(value?.name ?? "");
         }
       }}
       filterOptions={(options: Pokemon[], state: { inputValue: string }) => {
-        return options.filter(option => {
-          return option.name.toLowerCase().includes(state.inputValue.toLowerCase());
+        return options.filter((option) => {
+          return option.name
+            .toLowerCase()
+            .includes(state.inputValue.toLowerCase());
         });
       }}
       sx={{ width: "100%" }}

@@ -6,11 +6,11 @@ import { styled } from "styled-components";
 const StyledContainer = styled.div`
   width: 300px;
   display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: stretch;
-	align-content: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
 `;
 
 export default function PokemonType() {

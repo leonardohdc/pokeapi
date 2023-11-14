@@ -9,11 +9,7 @@ import { BaseStats } from "../../helpers/class/BaseStats";
 import { usePokemonContext } from "../../lib/contexts/PokemonContext";
 import { Grid } from "@mui/material";
 
-interface PokemonStats {
-  pokemonAbilities: PokemonAbility[];
-}
-
-const PokemonStats: React.FC<PokemonStats> = ({ pokemonAbilities }) => {
+const PokemonStats = () => {
   const { pokemon, isLoadingPokemon } = usePokemonContext();
 
   function getStat(stats: string) {
@@ -44,9 +40,7 @@ const PokemonStats: React.FC<PokemonStats> = ({ pokemonAbilities }) => {
       <BaseStatsCard baseStats={baseStats}></BaseStatsCard>
       <Grid container spacing={2}>
         <Grid item xs={6}>
-          <PokemonAbilitiesCard
-            pokemonAbilities={pokemonAbilities}
-          ></PokemonAbilitiesCard>
+          <PokemonAbilitiesCard></PokemonAbilitiesCard>
         </Grid>
         <Grid item xs={6}>
           <BasicInfoCard basicInfo={basicInfo}></BasicInfoCard>

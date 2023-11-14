@@ -4,7 +4,7 @@ export type ColorHexDictionary = Record<string, string>;
 export const colorDictionary : ColorHexDictionary = {
   "normal": "#A8A878",
   "fighting": "#C03028",
-  "dark": "#705898",
+  "dark": "#707070",
   "water": "#6890F0",
   "fire": "#F08030",
   "rock": "#B8A038",
@@ -18,6 +18,6 @@ export const colorDictionary : ColorHexDictionary = {
   "ground": "#E0C068",
   "poison": "#A040A0",
   "electric": "#F8D030",
-  "psychic": "#78C850",
+  "psychic": "#F366B9",
   "flying": "#B97FC9"
 };

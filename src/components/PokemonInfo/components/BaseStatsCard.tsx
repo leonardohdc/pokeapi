@@ -20,7 +20,7 @@ interface PokemonStats {
 
 const BaseStatsCard: React.FC<PokemonStats> = ({ baseStats }) => {
   return (
-    <Card variant="outlined" elevation={2} sx={{ width: '100%' }}>
+    <Card variant="outlined" sx={{ width: "100%" }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           BASE STATS
@@ -29,37 +29,41 @@ const BaseStatsCard: React.FC<PokemonStats> = ({ baseStats }) => {
           <div className="spacing">
             <Stack direction="row" spacing={1}>
               <Chip label={<GiHealthNormal></GiHealthNormal>} />
-              <StatBar stat={Math.round(baseStats.hp!/10)}></StatBar>
+              <StatBar stat={Math.round(baseStats.hp! / 10)}></StatBar>
             </Stack>
           </div>
           <div className="spacing">
             <Stack direction="row" spacing={1}>
               <Chip label={<GiBroadsword></GiBroadsword>} />
-              <StatBar stat={Math.round(baseStats.attack!/10)}></StatBar>
+              <StatBar stat={Math.round(baseStats.attack! / 10)}></StatBar>
             </Stack>
           </div>
           <div className="spacing">
             <Stack direction="row" spacing={1}>
               <Chip label={<GiWizardStaff></GiWizardStaff>} />
-              <StatBar stat={Math.round(baseStats.specialAttack!/10)}></StatBar>
+              <StatBar
+                stat={Math.round(baseStats.specialAttack! / 10)}
+              ></StatBar>
             </Stack>
           </div>
           <div className="spacing">
             <Stack direction="row" spacing={1}>
               <Chip label={<GiShield></GiShield>} />
-              <StatBar stat={Math.round(baseStats.specialDefense!/10)}></StatBar>
+              <StatBar
+                stat={Math.round(baseStats.specialDefense! / 10)}
+              ></StatBar>
             </Stack>
           </div>
           <div className="spacing">
             <Stack direction="row" spacing={1}>
               <Chip label={<GiMagicShield></GiMagicShield>} />
-              <StatBar stat={Math.round(baseStats.speed!/10)}></StatBar>
+              <StatBar stat={Math.round(baseStats.speed! / 10)}></StatBar>
             </Stack>
           </div>
           <div className="spacing">
             <Stack direction="row" spacing={1}>
               <Chip label={<GiWingfoot></GiWingfoot>} />
-              <StatBar stat={Math.round(baseStats.hp!/10)}></StatBar>
+              <StatBar stat={Math.round(baseStats.hp! / 10)}></StatBar>
             </Stack>
           </div>
         </div>
