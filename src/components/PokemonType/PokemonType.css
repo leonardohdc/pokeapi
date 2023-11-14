@@ -1,9 +1,0 @@
-.type-box {
-    width: 300px;
-    display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-evenly;
-	align-items: center;
-	align-content: stretch;
-}

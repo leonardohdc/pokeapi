@@ -13,8 +13,6 @@ import { queryClient } from "./lib/services/queryClient";
 import { PokemonContextProvider } from "./lib/contexts/PokemonContext";
 
 function App() {
-  const types: string[] = ["steel", "dark"];
-  const baseStats = new BaseStats(15, 12, 11, 1, 1, 1);
   const basicInfo = new BasicInfo(1, 1);
   const pokemonAbilities: PokemonAbility[] = [
     {
@@ -40,10 +38,8 @@ function App() {
           <div className="App-Container">
             <SearchBar></SearchBar>
             <PokemonSprite></PokemonSprite>
-            <PokemonType types={types} />
+            <PokemonType />
             <PokemonStats
-              baseStats={baseStats}
-              basicInfo={basicInfo}
               pokemonAbilities={pokemonAbilities}
             ></PokemonStats>
           </div>

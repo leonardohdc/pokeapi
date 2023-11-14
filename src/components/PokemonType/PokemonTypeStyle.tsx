@@ -8,17 +8,26 @@ interface Type {
 const StyledComponent = styled.div<{ $bgColor?: string }>`
   height: 50px;
   position: relative;
-  width: 309px;
+  width: 300px;
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
 
   & .overlap-group {
-    background-color: ${(props) => (props.$bgColor)};
+    background-color: ${(props) => props.$bgColor};
     border-radius: 5px;
     height: 50px;
-    left: 0;
-    position: absolute;
-    top: 0;
     width: 140px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
   }
 
   & .text-wrapper {
@@ -26,13 +35,9 @@ const StyledComponent = styled.div<{ $bgColor?: string }>`
     font-family: "Inter-Regular", Helvetica;
     font-size: 12px;
     font-weight: 400;
-    left: 50px;
-    letter-spacing: 0;
     line-height: normal;
-    position: absolute;
     font-weight: 500;
     color: #212121;
-    top: 17px;
   }
 `;
 

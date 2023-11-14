@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -14,8 +13,7 @@ interface PokemonAbilities {
 
 const PokemonAbilitiesCard: React.FC<PokemonAbilities> = ({ pokemonAbilities }) => {
   return (
-    <Box sx={{ maxWidth: 275 }}>
-      <Card variant="outlined">
+      <Card sx={{ maxWidth: '100%' }} elevation={2} variant="outlined">
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             ABILITIES
@@ -36,7 +34,6 @@ const PokemonAbilitiesCard: React.FC<PokemonAbilities> = ({ pokemonAbilities }) 
           ))}
         </CardContent>
       </Card>
-    </Box>
   );
 };
 

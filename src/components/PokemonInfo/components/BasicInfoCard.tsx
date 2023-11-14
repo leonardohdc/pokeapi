@@ -9,7 +9,7 @@ interface PokemonStats {
 
 const BasicInfoCard: React.FC<PokemonStats> = ({ basicInfo }) => {
     return (
-        <Card sx={{ minWidth: 275, height: 209.89 }}>
+        <Card elevation={2} variant='outlined' style={{ height: '100%' }} sx={{ minWidth: '100%' }}>
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                     BASIC INFO

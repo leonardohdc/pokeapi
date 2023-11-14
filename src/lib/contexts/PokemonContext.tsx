@@ -29,6 +29,7 @@ export const PokemonContextProvider = ({
   children: ReactNode;
 }) => {
   const [currentPokemon, setCurrentPokemon] = useState("");
+  const [currentAbilities, setCurrentAbilities] = useState<string[]>([]);
 
   const { data: pokemon, isLoading: isLoadingPokemon } =
     pokeapiService.useGetPokemon(currentPokemon);

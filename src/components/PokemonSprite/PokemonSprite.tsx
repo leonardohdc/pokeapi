@@ -1,16 +1,16 @@
 import { Skeleton } from "@mui/material";
 import { usePokemonContext } from "../../lib/contexts/PokemonContext";
-import "./PokemonSprite.css";
+import { PokemonSpriteStyled } from "./PokemonSprite.styles";
 
 export default function PokemonSprite() {
   const { pokemon, isLoadingPokemon } = usePokemonContext();
 
   return isLoadingPokemon ? <Skeleton /> : (
-      <div className="pokemon-sprite">
-        <img
+      <PokemonSpriteStyled>
+        <img className="image"
           src={pokemon?.sprites?.front_default}
           alt={pokemon?.name}
         ></img>
-      </div>
+      </PokemonSpriteStyled>
   );
 }
