@@ -48,6 +48,18 @@ const PokemonAbilitiesCard = () => {
     unknown
   >[];
 
+  function cleaningAbilityName(abilityName: string) {
+    if (abilityName) {
+      abilityName = capitalizeFirstLetter(abilityName);
+      return abilityName.replaceAll('-', ' ');
+    }
+    return "";
+  }
+
+  const capitalizeFirstLetter = (string: string): string => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   return (
     <Card
       sx={{ maxWidth: "100%" }}
@@ -65,7 +77,7 @@ const PokemonAbilitiesCard = () => {
               aria-controls={`panel${index + 1}-content`}
               id={`panel${index + 1}-header`}
             >
-              <Typography>{ability.data?.data.name}</Typography>
+              <Typography>{cleaningAbilityName(ability.data?.data.name!)}</Typography>
             </AccordionSummary>
             <AccordionDetails>
               {
